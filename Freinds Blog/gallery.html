@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Blog - Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url('background (2).jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        #gallery img {
+            width: 100%;         
+            height: 300px;       
+            object-fit: cover;   
+            max-width: 100%;     
+            display: block;      
+            margin-bottom: 15px; 
+            cursor: pointer;    
+        }
+
+        /* Additional container styles to organize the gallery */
+        #gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Auto-layout for responsive grid */
+            gap: 15px; /* Space between grid items */
+            padding: 20px;
+        }
+
+        /* Adjust grid item layout for small screens */
+        @media (max-width: 768px) {
+            #gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Change grid layout for smaller screens */
+            }
+        }
+
+        /* Next button style */
+        .next-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .next-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <!-- Image links -->
+            <a href="images/it1.jpg" class="image-link"><img src="images/it1.jpg" alt="Image 1"></a>
+            <a href="images/it2.jpg" class="image-link"><img src="images/it2.jpg" alt="Image 2"></a>
+            <a href="images/it3.jpg" class="image-link"><img src="images/it3.jpg" alt="Image 3"></a>
+            <a href="images/it4.jpg" class="image-link"><img src="images/it4.jpg" alt="Image 4"></a>
+            <a href="images/it5.jpg" class="image-link"><img src="images/it5.jpg" alt="Image 5"></a>
+            <a href="images/it6.jpg" class="image-link"><img src="images/it6.jpg" alt="Image 6"></a>
+            <a href="images/it7.jpg" class="image-link"><img src="images/it7.jpg" alt="Image 7"></a>
+            <a href="images/it8.jpg" class="image-link"><img src="images/it8.jpg" alt="Image 8"></a>
+            <a href="images/its1.jpg" class="image-link"><img src="images/its1.jpg" alt="Image 1"></a>
+            <a href="images/its2.jpg" class="image-link"><img src="images/its2.jpg" alt="Image 2"></a>
+            <a href="images/its3.jpg" class="image-link"><img src="images/its3.jpg" alt="Image 3"></a>
+            <a href="images/its4.jpg" class="image-link"><img src="images/its4.jpg" alt="Image 4"></a>
+            <a href="images/barkadas.jpg" class="image-link"><img src="images/barkadas.jpg" alt="Barkada Image 1"></a>
+            <a href="images/barkadas2.jpg" class="image-link"><img src="images/barkadas2.jpg" alt="Barkada Image 2"></a>
+            <a href="images/bff.jpg" class="image-link"><img src="images/bff.jpg" alt="BFF Image"></a>
+        </section>
+
+        <!-- Next Button -->
+        <button class="next-btn" id="nextBtn">Next</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Friends Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle the "Next" button functionality
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            const images = document.querySelectorAll('.image-link');
+            let currentIndex = 0;
+
+            // Find the index of the currently clicked image
+            for (let i = 0; i < images.length; i++) {
+                if (images[i].querySelector('img').src === window.location.href) {
+                    currentIndex = i;
+                    break;
+                }
+            }
+
+            // Go to the next image, or loop to the first image
+            currentIndex = (currentIndex + 1) % images.length;
+
+            // Update the location to the next image
+            window.location.href = images[currentIndex].href;
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

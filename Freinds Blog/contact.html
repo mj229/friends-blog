@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Blog - Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url('background (2).jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .contact-content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact-content h2 {
+            margin-bottom: 20px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li> <!-- Highlighting active page -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-content">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, suggestions, or just want to say hello, feel free to reach out!</p>
+            
+            <h3>Send Us a Message</h3>
+            <form class="contact-form" action="mailto:friendsblog@example.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+
+            <p>Or simply email us at <a href="mailto:friendsblog@example.com">friendsblog@example.com</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Friends Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
